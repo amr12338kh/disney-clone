@@ -2,32 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 5.9% 10%;
+    --secondary-foreground: 240 4.8% 95.9%;
+    --muted: 240 3.8% 46.1%;
+    --muted-foreground: 240 4.8% 95.9%;
+    --accent: 240 5.9% 10%;
+    --accent-foreground: 240 4.8% 95.9%;
+    --destructive: 0 0% 98%;
+    --destructive-foreground: 0 84.2% 60.2%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 98%;
+    --secondary-foreground: 240 3.7% 15.9%;
+    --muted: 240 5% 64.9%;
+    --muted-foreground: 240 3.7% 15.9%;
+    --accent: 0 0% 98%;
+    --accent-foreground: 240 3.7% 15.9%;
+    --destructive: 0 0% 98%;
+    --destructive-foreground: 0 62.8% 30.6%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-primary;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .movie_title {
+    @apply text-[10px] xs:text-xs sm:text-xl md:text-3xl font-bold lg:text-4xl xl:text-6xl lg:max-w-2xl md:max-w-lg sm:max-w-[400px] max-w-[80%] line-clamp-1 xs:line-clamp-2 lg:line-clamp-3;
+  }
+
+  .movie_metadata {
+    @apply hidden xs:flex gap-1 lg:gap-3 text-[6px] sm:text-[10px] lg:text-base font-semibold;
+  }
+
+  .movie_overview {
+    @apply line-clamp-2 xs:line-clamp-3 md:line-clamp-4 text-muted text-[5px] xs:text-[7px] sm:text-[10px] lg:text-sm xl:text-[15px] lg:max-w-lg xl:max-w-xl md:max-w-sm sm:max-w-[400px] max-w-[80%];
+  }
+
+  .movie_genreLink {
+    @apply cursor-pointer text-[6px] sm:text-[10px] lg:text-base hover:underline font-semibold;
+  }
+
+  .main_movies_section {
+    @apply flex flex-col space-y-8 -mt-6 xs:-mt-10 sm:-mt-24 md:-mt-32 lg:-mt-36 xl:-mt-48 2xl:-mt-64;
+  }
+
+  .search_heading {
+    @apply px-5 sm:px-0 sm:ml-container capitalize text-base xs:text-2xl sm:text-2xl md:text-3xl line-clamp-2 font-semibold;
+  }
+
+  .genre_heading {
+    @apply px-5 sm:px-0 sm:ml-container capitalize text-3xl font-semibold;
   }
 }

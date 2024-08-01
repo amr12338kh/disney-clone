@@ -35,7 +35,7 @@ const SearchBar = () => {
             <FormItem>
               <FormControl>
                 <Input
-                  className="w-full h-14 rounded-lg text-primary-foreground border-none text-lg"
+                  className="w-full h-14 rounded-lg border-none text-lg bg-[#1b1f27]"
                   placeholder="Search..."
                   {...field}
                 />

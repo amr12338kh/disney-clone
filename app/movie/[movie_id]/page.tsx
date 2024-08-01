@@ -13,6 +13,19 @@ import {
 import Movie from "@/components/SingleMovie/Movie";
 import MoviesCarousel from "@/components/Carousel/MovieCarousel";
 import VideoCard from "@/components/Cards/VideoCard";
+import type { Metadata } from "next";
+
+interface Props {
+  params: { movie_id: number };
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const movie: MovieDetailsProps = await getMovieDetails(params.movie_id);
+
+  return {
+    title: `${movie.title} - Disney+`,
+  };
+}
 
 const page = async ({ params }: { params: { movie_id: number } }) => {
   const movie: MovieDetailsProps = await getMovieDetails(params.movie_id);

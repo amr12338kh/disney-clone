@@ -12,7 +12,7 @@ import {
   List,
 } from "lucide-react";
 
-const iconsSize = 23;
+const iconsSize = 21;
 
 export const sidebarData = [
   { icon: <CircleUser size={iconsSize} />, text: "Profile", link: "/profile" },

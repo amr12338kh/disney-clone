@@ -3,6 +3,7 @@ export interface SidebarItemsProps {
   text: string;
   link: string;
   setIsOpen?: (e: boolean) => void;
+  setIsHovered?: (e: boolean) => void;
 }
 
 export interface MobileSidebarProps {

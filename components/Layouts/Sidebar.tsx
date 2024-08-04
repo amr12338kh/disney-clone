@@ -36,7 +36,7 @@ const Sidebar = ({ className }: { className?: string }) => {
         } bg-gradient-to-r from-[#0f1014] from-5% duration-700`}
       />
       <div
-        className={` z-10  fixed top-[50%] translate-y-[-50%] left-0 my-auto flex flex-col gap-y-16 group py-8 ${
+        className={` z-10  fixed top-[50%] translate-y-[-50%] left-0 my-auto flex flex-col gap-y-14 group py-8 ${
           isHovered ? "w-[170px]" : "w-[100px]"
         }`}
         onMouseEnter={() => setIsHovered(true)}
